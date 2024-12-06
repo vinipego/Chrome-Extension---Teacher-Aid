@@ -3,63 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Teacher Aid</title>
+    <link rel="stylesheets" href="styles.css" />
+    <title>Teacher's Aid</title>
   </head>
   <body>
-    <!-- start of extension wrapper -->
-    <div id="extension-wrapper">
-      <!-- start of top half box -->
-      <div id="top-wrapper">
-        <div id="top-left-wrapper" class="side-wrapper">
-          <div class="timer-input-wrapper">
-            <input type="number" class="timer-input" placeholder="00" />
-            <p>:</p>
-            <input type="number" class="timer-input" placeholder="00" />
-          </div>
+    <div class="timer-container">
+      <!-- Timer display/input -->
+      <input
+        type="text"
+        class="timer-input"
+        placeholder="MM:SS"
+        maxlength="5"
+      />
 
-          <button>▸</button>
-        </div>
-        <div id="top-right-wrapper" class="side-wrapper">
-            <div class="timer-input-wrapper">
-                <input type="number" class="timer-input" placeholder="00" />
-                <p>:</p>
-                <input type="number" class="timer-input" placeholder="00" />
-              </div>
-              <div class="timer-input-wrapper">
-                <input type="number" class="timer-input" placeholder="00" />
-                <p>:</p>
-                <input type="number" class="timer-input" placeholder="00" />
-              </div>
-              <div class="timer-input-wrapper">
-                <input type="number" class="timer-input" placeholder="00" />
-                <p>:</p>
-                <input type="number" class="timer-input" placeholder="00" />
-              </div>
-              <div class="timer-input-wrapper">
-                <input type="number" class="timer-input" placeholder="00" />
-                <p>:</p>
-                <input type="number" class="timer-input" placeholder="00" />
-              </div>
-        </div>
-        <!-- end of top half box -->
+      <!-- Circular animation placeholder -->
+      <div class="circular-animation"></div>
+
+      <!-- Timer controls -->
+      <div class="timer-controls">
+        <button class="play-button">Play</button>
+        <button class="stop-resume-button" hidden>Pause</button>
+        <button class="reset-button" hidden>Reset</button>
       </div>
 
-      <!-- start of bottom wrapper -->
-      <div id="bottom-wrapper">
-        <div id="bottom-left-wrapper" class="side-wrapper">
-          <h2>Cool Website?</h2>
-          <button>Save it!</button>
-          <button>Clear</button>
-        </div>
-        <div id="bottom-right-wrapper" class="side-wrapper">
-          <ul id="website-links-ul"></ul>
-        </div>
-
-        <!-- end of bottom wrapper -->
+      <!-- Predefined times -->
+      <div class="predefined-times">
+        <button class="time-button">10:00</button>
+        <button class="time-button">05:00</button>
+        <button class="time-button">01:00</button>
+        <button class="time-button">00:30</button>
       </div>
-
-      <!-- end of extension wrapper -->
     </div>
 
     <script src="scripts.js"></script>
