@@ -1,7 +1,132 @@
-*{
-    border: 1px solid #008000;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c4c4c4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* vh = viewport height, src: https://lacolmenatecnologica.com/en/elementor-academy-temas/what-is-the-difference-between-px-em-rem-vw-and-vh/#:~:text=While%20PX%2C%20EM%20and%20REM,full%20height%20of%20the%20screen.*/
+  height: 100vh;
 }
 
-body{
-    background-color: rgb(43, 43, 43);
+/* A simple container to center everything */
+.timer-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  /* box-shadow: 0 0 20px rgb(225, 148, 255); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
+
+
+
+.circular-animation {
+  width: 180px; /* Circle size */
+  height: 180px;
+  border: 6px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  /* background-color: rgba(225, 148, 255, 0.397); */
+}
+
+.timer-input {
+  font-size: 2.5rem;
+  text-align: center;
+  width: 130px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  color: #333;
+  position: absolute; /* Center inside the circle */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.timer-input:focus {
+    outline: none;
+    border-bottom: 2px solid #007bff;
+}
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button states */
+button:hover {
+  background-color: rgb(225, 148, 255);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Specific buttons */
+.play-button {
+  background-color: rgb(161, 122, 197);
+  color: #fff;
+}
+
+.stop-resume-button {
+  background-color: rgb(161, 122, 197);
+  color: #fff;
+}
+
+.reset-button {
+  background-color: rgb(197, 122, 191);
+  color: #fff;
+}
+
+.time-button {
+  background-color: rgb(200, 182, 218);
+  color: #333;
+}
+
+.timer-controls {
+  /* placeholder CSS for when I move the buttons to their
+    shotcut position on the top-right part of the extension layout */
+}
+
+.predefined-times {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.predefined-times {
+  margin-top: 10px;
+}
+
+.tooltip {
+    color: #fff;
+    background-color: #dc3545; /* Red for error */
+    padding: 5px 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: 10%; /* Slightly below the input */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tooltip::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #dc3545 transparent;
+  }

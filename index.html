@@ -3,21 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheets" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/teacher-aid-icon.ico">
     <title>Teacher's Aid</title>
   </head>
   <body>
+    <!-- Timer Section -->
     <div class="timer-container">
-      <!-- Timer display/input -->
-      <input
-        type="text"
-        class="timer-input"
-        placeholder="MM:SS"
-        maxlength="5"
-      />
-
-      <!-- Circular animation placeholder -->
-      <div class="circular-animation"></div>
+      <div class="circular-animation">
+        <input
+          type="text"
+          class="timer-input"
+          placeholder="MM:SS"
+          maxlength="5"
+        />
+        <div class="tooltip" hidden>Please enter a valid time!</div>
+      </div>
 
       <!-- Timer controls -->
       <div class="timer-controls">
@@ -35,6 +36,11 @@
       </div>
     </div>
 
+    <audio
+      id="timer-sound"
+      src="audio/times-up-alarm-tone-samsung-ringtones.mp3"
+      preload="auto"
+    ></audio>
     <script src="scripts.js"></script>
   </body>
 </html>
