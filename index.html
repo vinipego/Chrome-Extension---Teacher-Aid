@@ -11,6 +11,28 @@
     <!-- Timer Section -->
     <div class="timer-container">
       <div class="circular-animation">
+        <svg width="120" height="120" viewBox="0 0 36 36">
+          <circle
+            class="progress-ring__background"
+            cx="18"
+            cy="17.5"
+            r="16"
+            fill="transparent"
+            stroke="#ccc"
+            stroke-width="2.5"
+          />
+          <circle
+            class="progress-ring__circle"
+            cx="18"
+            cy="17.5"
+            r="16"
+            fill="transparent"
+            stroke="#007bff"
+            stroke-width="2.5"
+            stroke-dasharray="100, 100"
+            stroke-dashoffset="100"
+          />
+        </svg>
         <input
           type="text"
           class="timer-input"
@@ -29,10 +51,10 @@
 
       <!-- Predefined times -->
       <div class="predefined-times">
-        <button class="time-button">10:00</button>
-        <button class="time-button">05:00</button>
-        <button class="time-button">01:00</button>
-        <button class="time-button">00:30</button>
+        <button id="ten-minute-shortcut" class="time-button">10:00</button>
+        <button id="five-minute-shortcut" class="time-button">05:00</button>
+        <button id="one-minute-shortcut" class="time-button">01:00</button>
+        <button id="half-minute-shortcut" class="time-button">00:30</button>
       </div>
     </div>
 

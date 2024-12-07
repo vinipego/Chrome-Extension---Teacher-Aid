@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before{
+  /* border: 0.5px dotted green; */
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -24,18 +30,32 @@ body {
 
 
 .circular-animation {
-  width: 180px; /* Circle size */
-  height: 180px;
+  width: 100px; /* Circle size */
+  height: 100px;
   border: 6px solid #ccc;
   border-radius: 50%;
   position: relative;
   /* background-color: rgba(225, 148, 255, 0.397); */
 }
 
+.circular-animation svg {
+  transform: rotate(-90deg); /* Start progress from the top */
+  position: absolute; 
+  /* Ensures proper positioning */
+  top: -10px; /* Adjust as needed */
+  left: -10px; /* Adjust as needed */
+  transform: rotate(-90deg); /* Keeps progress starting from the top */
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 1s linear; /* Smooth progress updates */
+  transform-origin: center;
+}
+
 .timer-input {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-align: center;
-  width: 130px;
+  width: 80px;
   border: none;
   border-bottom: 2px solid #ccc;
   background: transparent;
@@ -100,6 +120,7 @@ button:active {
   display: flex;
   gap: 10px;
   justify-content: center;
+  /* background-color: green; */
 }
 
 .predefined-times {
@@ -112,21 +133,35 @@ button:active {
     padding: 5px 10px;
     border-radius: 4px;
     position: absolute;
-    top: 10%; /* Slightly below the input */
+    top: 20px; /* Slightly below the input */
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.9rem;
     white-space: nowrap;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid red;
+
   }
   
   .tooltip::before {
     content: '';
     position: absolute;
-    top: -5px;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent #dc3545 transparent;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+    hidden: false !important;
+    border: 2px solid red;
+  }
+
+  button:disabled {
+    pointer-events: all; /* Allow events to propagate */
+    cursor: not-allowed; /* Visual feedback for disabled state */
+    background-color: #c4c4c4;
+    opacity: 0.4; /* Dim the button to indicate it's disabled */
   }
