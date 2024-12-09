@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="img/teacher-aid-icon.ico">
+    <link rel="icon" href="img/teacher-aid-icon.ico" />
     <title>Teacher's Aid</title>
   </head>
   <body>
@@ -27,7 +27,7 @@
             cy="17.5"
             r="16"
             fill="transparent"
-            stroke="#007bff"
+            stroke="#e194ff"
             stroke-width="2.5"
             stroke-dasharray="100, 100"
             stroke-dashoffset="100"
@@ -51,11 +51,31 @@
 
       <!-- Predefined times -->
       <div class="predefined-times">
-        <button id="ten-minute-shortcut" class="time-button">10:00</button>
-        <button id="five-minute-shortcut" class="time-button">05:00</button>
-        <button id="one-minute-shortcut" class="time-button">01:00</button>
-        <button id="half-minute-shortcut" class="time-button">00:30</button>
+        <div class="shortcut-subsection" id="predefined-section-one">
+          <button id="ten-minute-shortcut" class="shortcut-button">
+            10:00
+          </button>
+          <button id="five-minute-shortcut" class="shortcut-button">
+            05:00
+          </button>
+        </div>
+        <div class="shortcut-subsection" id="predefined-section-two">
+          <button id="one-minute-shortcut" class="shortcut-button">
+            01:00
+          </button>
+          <button id="half-minute-shortcut" class="shortcut-button">
+            00:30
+          </button>
+        </div>
       </div>
+      <p id="notes-p"><label id="notes-label" for="notes-area">Notes:</label></p>
+      <textarea id="notes-area" rows="4" cols="25" style="overflow:hidden"></textarea>
+      <div class="notes-buttons">
+        
+        <button class="notes-btn" id="save-notes-button">Save</button>
+        <button class="notes-btn" id="resume-notes-button" hidden>Grap Saved Text</button>
+      </div>
+      
     </div>
 
     <audio

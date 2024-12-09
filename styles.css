@@ -1,49 +1,70 @@
 *,
 *::after,
-*::before{
+*::before {
   /* border: 0.5px dotted green; */
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #c4c4c4;
+  color: #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
   /* vh = viewport height, src: https://lacolmenatecnologica.com/en/elementor-academy-temas/what-is-the-difference-between-px-em-rem-vw-and-vh/#:~:text=While%20PX%2C%20EM%20and%20REM,full%20height%20of%20the%20screen.*/
-  height: 100vh;
+  height: 400px;
+  /* test how the extension will deal with the width */
+  min-width: 190px;
+  /* max-width: 250px; */
 }
 
-/* A simple container to center everything */
+/* overall container. Pretty much same as body for now */
 .timer-container {
-  background-color: #fff;
+  background-color: #353535;
   padding: 20px;
   border-radius: 15px;
-  /* box-shadow: 0 0 20px rgb(225, 148, 255); */
+  border: 3px solid rgb(0, 0, 0);
+  /* box-shadow: 0 0 20px #e194ff; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  width: 190px;
 }
 
+.predefined-times {
+  display: grid;
+  gap: 5px;
+  justify-content: center;
+  /* background-color: green; */
+}
 
+.shortcut-subsection {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+}
 
 .circular-animation {
   width: 100px; /* Circle size */
   height: 100px;
   border: 6px solid #ccc;
+
+  stroke: #ccc;
   border-radius: 50%;
   position: relative;
-  /* background-color: rgba(225, 148, 255, 0.397); */
+  background-color: #272727;
 }
 
 .circular-animation svg {
   transform: rotate(-90deg); /* Start progress from the top */
-  position: absolute; 
+  position: absolute;
+
   /* Ensures proper positioning */
-  top: -10px; /* Adjust as needed */
-  left: -10px; /* Adjust as needed */
+  top: -10px;
+  left: -10px;
   transform: rotate(-90deg); /* Keeps progress starting from the top */
 }
 
@@ -55,11 +76,11 @@ body {
 .timer-input {
   font-size: 1.5rem;
   text-align: center;
+  color: #ccc;
   width: 80px;
   border: none;
   border-bottom: 2px solid #ccc;
   background: transparent;
-  color: #333;
   position: absolute; /* Center inside the circle */
   top: 50%;
   left: 50%;
@@ -67,8 +88,8 @@ body {
   z-index: 2;
 }
 .timer-input:focus {
-    outline: none;
-    border-bottom: 2px solid #007bff;
+  outline: none;
+  border-bottom: 2px solid rgb(161, 122, 197);
 }
 button {
   padding: 10px 20px;
@@ -102,66 +123,85 @@ button:active {
 }
 
 .reset-button {
-  background-color: rgb(197, 122, 191);
+  background-color: rgb(161, 122, 197);
   color: #fff;
 }
 
-.time-button {
-  background-color: rgb(200, 182, 218);
-  color: #333;
+.shortcut-button {
+  background-color: #8f57a5;
+  color: #fff;
+  text-shadow: 0 0 1px black;
+  font-size: 0.5em;
+  padding: 3px 6px;
+  font-weight: bold;
 }
 
-.timer-controls {
-  /* placeholder CSS for when I move the buttons to their
-    shotcut position on the top-right part of the extension layout */
+.grey-out {
+  background-color: #353535;
+  color: #353535;
+  text-shadow: none;
+  border: 1px solid #8f57a5;
 }
 
-.predefined-times {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  /* background-color: green; */
-}
-
-.predefined-times {
-  margin-top: 10px;
+.grey-out:hover {
+  background-color: #353535;
+  color: #353535;
+  transform: scale(1);
+  box-shadow: inset 0 0 3px #8f57a5;
+  cursor: default;
 }
 
 .tooltip {
-    color: #fff;
-    background-color: #dc3545; /* Red for error */
-    padding: 5px 10px;
-    border-radius: 4px;
-    position: absolute;
-    top: 20px; /* Slightly below the input */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.9rem;
-    white-space: nowrap;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border: 1px solid red;
+  color: #fff;
+  background-color: #da8e96;
+  padding: 5px 10px;
+  border-radius: 4px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid red;
+  z-index: 2;
+}
 
-  }
-  
-  .tooltip::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #dc3545 transparent;
+#notes-p {
+  margin: 10px 0 -10px 10px;
+  align-self: start;
+}
 
-    visibility: visible !important;
-    opacity: 1 !important;
-    hidden: false !important;
-    border: 2px solid red;
-  }
+#notes-area {
+  font-size: 12px;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #272727;
+  color: #c4c4c4;
+  box-shadow: inset 0 0 2px #c4c4c4;
+}
+.notes-buttons{
+  width: 180px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.notes-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+  margin-top: -5px;
+  background-color: #353535;
+  color: #c4c4c4;
+  border: 1px solid #c4c4c4;
+  box-shadow: inset 0 0 2px #c4c4c4;
+}
 
-  button:disabled {
-    pointer-events: all; /* Allow events to propagate */
-    cursor: not-allowed; /* Visual feedback for disabled state */
-    background-color: #c4c4c4;
-    opacity: 0.4; /* Dim the button to indicate it's disabled */
-  }
+.notes-btn:hover {
+  background-color: #c4c4c4;
+  color: #353535;
+}
+
+#resume-notes-button{
+  font-size: 8px;
+  padding: 0 5px;
+}
