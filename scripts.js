@@ -190,6 +190,7 @@ saveNotes.addEventListener("click", () => {
     resumeNotes.hidden = false;
   }else{
     localStorage.removeItem("savedNotes");
+    resumeNotes.hidden = true;
   }
 });
 

@@ -1,9 +1,12 @@
 {
-    "manifest_version": 1,
-    "version": "1.0.0",
+    "manifest_version": 3,
+    "version": "1.0",
     "name": "Teacher Aid",
     "action": {
         "default_popup": "index.html",
-        "default_icon": "teacher-aid-icon.ico"
-    }
+        "default_icon": "img/alternative-icon.png"
+    },
+    "permissions": [
+        "tabs"
+    ]
 }

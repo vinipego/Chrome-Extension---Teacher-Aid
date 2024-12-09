@@ -8,37 +8,30 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #c4c4c4;
   color: #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
   /* vh = viewport height, src: https://lacolmenatecnologica.com/en/elementor-academy-temas/what-is-the-difference-between-px-em-rem-vw-and-vh/#:~:text=While%20PX%2C%20EM%20and%20REM,full%20height%20of%20the%20screen.*/
-  height: 400px;
-  /* test how the extension will deal with the width */
-  min-width: 190px;
-  /* max-width: 250px; */
+  
 }
 
 /* overall container. Pretty much same as body for now */
 .timer-container {
-  background-color: #353535;
+  background-color: #5a4463;
   padding: 20px;
-  border-radius: 15px;
-  border: 3px solid rgb(0, 0, 0);
-  /* box-shadow: 0 0 20px #e194ff; */
+  border: 3px solid #e194ff;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 190px;
+  min-width: 190px;
 }
 
 .predefined-times {
   display: grid;
   gap: 5px;
   justify-content: center;
-  /* background-color: green; */
 }
 
 .shortcut-subsection {
@@ -51,8 +44,6 @@ body {
   width: 100px; /* Circle size */
   height: 100px;
   border: 6px solid #ccc;
-
-  stroke: #ccc;
   border-radius: 50%;
   position: relative;
   background-color: #272727;
@@ -61,7 +52,6 @@ body {
 .circular-animation svg {
   transform: rotate(-90deg); /* Start progress from the top */
   position: absolute;
-
   /* Ensures proper positioning */
   top: -10px;
   left: -10px;
@@ -137,15 +127,15 @@ button:active {
 }
 
 .grey-out {
-  background-color: #353535;
-  color: #353535;
+  background-color: #5a4463;
+  color: #5a4463;
   text-shadow: none;
   border: 1px solid #8f57a5;
 }
 
 .grey-out:hover {
-  background-color: #353535;
-  color: #353535;
+  background-color: #5a4463;
+  color: #5a4463;
   transform: scale(1);
   box-shadow: inset 0 0 3px #8f57a5;
   cursor: default;
@@ -168,17 +158,24 @@ button:active {
 }
 
 #notes-p {
-  margin: 10px 0 -10px 10px;
+  margin: -5px 0 -10px 10px;
   align-self: start;
+  text-shadow: 0 0 1.5px #e194ff;
 }
 
 #notes-area {
   font-size: 12px;
   border-radius: 15px;
+  border: none;
   padding: 10px;
   background-color: #272727;
   color: #c4c4c4;
-  box-shadow: inset 0 0 2px #c4c4c4;
+  box-shadow: inset 0 0 5px #e194ff;
+}
+
+#notes-area:focus{
+  box-shadow: none;
+  border: 1px solid #e194ff;
 }
 .notes-buttons{
   width: 180px;
@@ -190,15 +187,15 @@ button:active {
   font-size: 12px;
   padding: 5px 10px;
   margin-top: -5px;
-  background-color: #353535;
+  background-color: #41274b;
   color: #c4c4c4;
-  border: 1px solid #c4c4c4;
-  box-shadow: inset 0 0 2px #c4c4c4;
+  border: 0.2px solid #e194ff;
+  box-shadow: inset 0 0 2px #e194ff;
 }
 
 .notes-btn:hover {
-  background-color: #c4c4c4;
-  color: #353535;
+  background-color: rgb(161, 122, 197);
+  color: #fff;
 }
 
 #resume-notes-button{
